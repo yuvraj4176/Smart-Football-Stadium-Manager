@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 import path from "path"
 import react from "@vitejs/plugin-react"
-import { defineConfig } from "vitest/config"
+import { defineConfig } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
@@ -16,6 +16,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // @ts-ignore: Vite and Vitest type mismatch workaround
   test: {
     environment: 'jsdom',
     globals: true,
